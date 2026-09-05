@@ -19,7 +19,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-secondary">
+      <section className="relative isolate overflow-hidden bg-dusk">
         <Image
           src={shots.brandHero}
           alt="Paradise City Logo, Altos Paraguay, Hunde und Palmen im Sonnenuntergang"
@@ -29,20 +29,20 @@ export default function HomePage() {
           className="h-auto w-full"
           sizes="100vw"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-secondary to-transparent sm:h-36" />
-        <div className="absolute inset-0 mx-auto flex max-w-6xl flex-col justify-end px-4 pb-28 pt-24 sm:px-6">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dusk from-15% via-dusk/75 via-50% to-transparent" />
+        <div className="absolute inset-0 mx-auto flex max-w-6xl flex-col justify-end px-4 pb-6 pt-20 sm:px-6 sm:pb-16 md:pb-28 md:pt-24">
           <p className="font-label text-[11px] text-white/80">{t.hero.kicker}</p>
-          <p className="mt-3 font-heading text-2xl text-white sm:text-3xl">{SITE.motto}</p>
-          <h1 className="mt-4 max-w-3xl font-heading text-4xl leading-[1.05] text-white sm:text-6xl">
+          <p className="mt-2 font-heading text-xl text-white sm:mt-3 sm:text-3xl">{SITE.motto}</p>
+          <h1 className="mt-2 max-w-3xl font-heading text-3xl leading-[1.08] text-white sm:mt-4 sm:text-6xl">
             {t.hero.title}
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-sand/90">{t.hero.lead}</p>
-          <div className="mt-8 flex flex-wrap gap-2">
+          <p className="mt-3 hidden max-w-xl text-sand/90 sm:mt-5 sm:block sm:text-lg">{t.hero.lead}</p>
+          <div className="mt-4 flex flex-wrap gap-2 sm:mt-8">
             {HOUSE_IDS.map((id) => (
               <a
                 key={id}
                 href={`#${id}`}
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 font-heading text-lg text-white backdrop-blur-sm hover:bg-white/20"
+                className="rounded-full border border-white/30 bg-white/10 px-3 py-1.5 font-heading text-base text-white backdrop-blur-sm hover:bg-white/20 sm:px-4 sm:py-2 sm:text-lg"
               >
                 {t.houses[id].name}
               </a>
@@ -51,7 +51,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="haeuser" className="relative z-10 mx-auto -mt-20 max-w-6xl px-4 pb-8 sm:px-6">
+      <section id="haeuser" className="relative z-10 mx-auto max-w-6xl px-4 pb-8 sm:px-6 md:-mt-20">
         <h2 className="sr-only">{t.housesIntro.title}</h2>
         <HouseCards />
       </section>
