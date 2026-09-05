@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/content";
+import { shots } from "@/lib/photos";
 import { useLanguage } from "@/components/language-provider";
 
 const MAP =
@@ -44,7 +45,7 @@ export default function LocationPage() {
       <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
         <div className="stone-frame relative aspect-[5/4] overflow-hidden rounded-2xl">
           <Image
-            src="/photos/grounds/lake-sunset.jpg"
+            src={shots.lakeSunset}
             alt="Lake Ypacaraí sunset"
             fill
             className="object-cover"

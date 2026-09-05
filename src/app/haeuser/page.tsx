@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { SectionHeading } from "@/components/section-heading";
 import { useLanguage } from "@/components/language-provider";
-import { houseCovers } from "@/lib/photos";
+import { houseCovers, shots } from "@/lib/photos";
 
 const IDS = ["rustico", "sunset", "romantico"] as const;
 
@@ -65,7 +65,7 @@ export default function HousesPage() {
           <p className="mt-4 text-sand/80">{t.saloon.text}</p>
         </div>
         <div className="relative min-h-56 overflow-hidden rounded-2xl">
-          <Image src="/photos/saloon/01.jpg" alt="Paradise City Saloon" fill className="object-cover" />
+          <Image src={shots.saloonSign} alt="Paradise City Saloon" fill className="object-cover" />
         </div>
       </section>
 

@@ -13,6 +13,7 @@ export default function PrivacyPage() {
         <p>{t.privacy.tracking}</p>
         <p>{t.privacy.language}</p>
         <p>{t.privacy.form}</p>
+        <p>{t.privacy.feed}</p>
       </div>
     </div>
   );

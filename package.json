@@ -6,7 +6,8 @@
     "dev": "next dev --port 43421 --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --port 43421 --hostname 127.0.0.1",
-    "lint": "eslint"
+    "lint": "eslint",
+    "feed:refresh": "node scripts/refresh-facebook-feed.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

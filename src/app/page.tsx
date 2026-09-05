@@ -7,6 +7,9 @@ import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/components/language-provider";
 import { SITE } from "@/lib/content";
+import { shots } from "@/lib/photos";
+import { FacebookFeed } from "@/components/facebook-feed";
+import { bundledFeed } from "@/lib/facebook-feed";
 
 const HOUSE_IDS = ["rustico", "sunset", "romantico"] as const;
 
@@ -17,7 +20,7 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[78vh] overflow-hidden">
         <Image
-          src="/photos/grounds/palms-dusk.jpg"
+          src={shots.palmsDusk}
           alt="Sunset over Paradise City"
           fill
           priority
@@ -49,7 +52,11 @@ export default function HomePage() {
         <HouseCards />
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-3">
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <FacebookFeed initial={bundledFeed} limit={8} variant="strip" />
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-3">
         {t.pillars.map((pillar) => (
           <div key={pillar.title} className="border-t-2 border-sunset pt-6">
             <h2 className="font-heading text-3xl">{pillar.title}</h2>
@@ -77,7 +84,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/photos/saloon/07.jpg"
+            src={shots.saloonPool}
             alt="Paradise City Saloon"
             fill
             className="object-cover"
@@ -100,7 +107,7 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
         <div className="stone-frame relative aspect-[5/3] overflow-hidden rounded-2xl">
           <Image
-            src="/photos/grounds/lake-sunset.jpg"
+            src={shots.lakeSunset}
             alt="Lake Ypacaraí at sunset"
             fill
             className="object-cover"
@@ -121,7 +128,7 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden">
         <Image
-          src="/photos/grounds/palms-dusk.jpg"
+          src={shots.palmsDusk}
           alt="Palms at dusk"
           fill
           className="object-cover"
