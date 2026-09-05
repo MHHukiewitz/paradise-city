@@ -49,10 +49,13 @@ export function SiteFooter() {
           >
             Facebook · Paradise City Saloon
           </a>
+          <Link className="mt-2 text-gold hover:underline" href="/datenschutz">
+            {t.footer.privacyPage}
+          </Link>
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-sand/60">
-        {t.footer.rights}
+        {t.footer.rights} · {t.footer.privacy}
       </div>
     </footer>
   );

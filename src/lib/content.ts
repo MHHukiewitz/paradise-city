@@ -169,6 +169,8 @@ export const copy = {
     footer: {
       note: "Ferienhäuser über dem See von San Bernardino. Seit 2011.",
       rights: "Paradise City · Altos, Paraguay",
+      privacy: "Keine Cookies. Kein Cookie-Banner.",
+      privacyPage: "Datenschutz",
     },
   },
   en: {
@@ -324,6 +326,8 @@ export const copy = {
     footer: {
       note: "Holiday houses above the lake at San Bernardino. Since 2011.",
       rights: "Paradise City · Altos, Paraguay",
+      privacy: "No cookies. No cookie banner.",
+      privacyPage: "Privacy",
     },
   },
 };
