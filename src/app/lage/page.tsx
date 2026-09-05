@@ -34,7 +34,7 @@ export default function LocationPage() {
         <div className="grid gap-4">
           {t.location.facts.map((fact) => (
             <div key={fact.label} className="rounded-2xl border border-border bg-card px-5 py-4">
-              <p className="font-label text-[10px] text-teal">{fact.label}</p>
+              <p className="font-label text-[10px] text-sunset">{fact.label}</p>
               <p className="mt-2 font-heading text-2xl">{fact.value}</p>
             </div>
           ))}

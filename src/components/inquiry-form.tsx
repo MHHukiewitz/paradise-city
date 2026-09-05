@@ -105,7 +105,7 @@ export function InquiryForm() {
         </p>
       ) : null}
       {status === "ready" ? (
-        <p className="text-sm text-teal" role="status">
+        <p className="text-sm text-sunset" role="status">
           {t.contact.form.sent}
         </p>
       ) : null}

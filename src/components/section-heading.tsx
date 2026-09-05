@@ -11,7 +11,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={`max-w-2xl ${light ? "text-sand" : ""}`}>
-      <p className={`font-label text-[11px] ${light ? "text-teal-soft" : "text-teal"}`}>{kicker}</p>
+      <p className={`font-label text-[11px] ${light ? "text-gold" : "text-sunset"}`}>{kicker}</p>
       <h2 className={`mt-3 text-3xl leading-tight font-medium sm:text-4xl ${light ? "text-white" : "text-ink"}`}>
         {title}
       </h2>

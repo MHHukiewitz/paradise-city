@@ -25,11 +25,17 @@ export const copy = {
       contact: "Kontakt",
     },
     hero: {
-      kicker: "Ybu · Altos · See von Ypacaraí",
-      title: "Ein Stück Paradies über dem See",
-      lead: "Drei individuelle Ferienhäuser über San Bernardino. Für kurze Nächte oder lange Monate. Deutsch und Englisch vor Ort.",
+      kicker: "Paradise City · Altos",
+      title: "Drei Häuser. Ein Abendrot.",
+      lead: "Rustico, Sunset und Romantico. Jedes Haus für zwei Personen. Kurz bleiben oder länger wohnen. Deutsch und Englisch vor Ort.",
       cta: "Haus anfragen",
       ctaHouses: "Die Häuser ansehen",
+    },
+    regionTeaser: {
+      kicker: "Die Gegend",
+      title: "See, Palmen, und der Weg nach Ybu",
+      lead: "Mehr zur Lage, zur Anfahrt und zu Paraguay steht auf der Lage-Seite.",
+      cta: "Lage und Anfahrt",
     },
     pillars: [
       {
@@ -54,6 +60,7 @@ export const copy = {
       rustico: {
         name: "Rustico",
         tag: "Erdhaus",
+        line: "Kamin, Küche mit Seesicht, grosse Dachterrasse",
         summary:
           "Ein einzigartiges Erdhaus mit angenehmem Klima das ganze Jahr. Rustikales Wohnzimmer mit Kamin, Küche mit Seesicht, Badezimmer im old-school Stil und eine riesige Dachterrasse.",
         points: [
@@ -67,6 +74,7 @@ export const copy = {
       sunset: {
         name: "Sunset",
         tag: "Terrasse",
+        line: "Riesige Terrasse und Sonnenuntergang über dem See",
         summary:
           "Individuell gestaltetes Ferienhaus mit riesiger Terrasse und eigener Dachterrasse. Traumhafte Seesicht, moderne Küche mit Bar und ein einzigartiges Badezimmer.",
         points: [
@@ -80,6 +88,7 @@ export const copy = {
       romantico: {
         name: "Romantico",
         tag: "Klein & fein",
+        line: "Kleines Haus, extra Zimmer, ruhige Terrasse",
         summary:
           "Unser kleines Ferienhäuschen mit überdachter Aussenterrasse, Schlafzimmer, Wohnküche, Badezimmer und einem zusätzlichen Raum als Büro oder zweites Schlafzimmer.",
         points: [
@@ -171,11 +180,17 @@ export const copy = {
       contact: "Contact",
     },
     hero: {
-      kicker: "Ybu · Altos · Lake Ypacaraí",
-      title: "A piece of paradise above the lake",
-      lead: "Three private holiday houses above San Bernardino. Stay a few nights or a few months. We speak German and English.",
+      kicker: "Paradise City · Altos",
+      title: "Three houses. One sunset.",
+      lead: "Rustico, Sunset, and Romantico. Each house is for two guests. Stay a few nights or a few months. We speak German and English.",
       cta: "Ask about a house",
       ctaHouses: "See the houses",
+    },
+    regionTeaser: {
+      kicker: "The area",
+      title: "Lake, palms, and the road to Ybu",
+      lead: "Read more about the location, the drive, and Paraguay on the location page.",
+      cta: "Location and directions",
     },
     pillars: [
       {
@@ -200,6 +215,7 @@ export const copy = {
       rustico: {
         name: "Rustico",
         tag: "Earth house",
+        line: "Fireplace, lake-view kitchen, large roof terrace",
         summary:
           "A unique earth house with a steady climate all year. A rustic living room with a fireplace, a kitchen with a lake view, an old-school bathroom, and a huge roof terrace.",
         points: [
@@ -213,6 +229,7 @@ export const copy = {
       sunset: {
         name: "Sunset",
         tag: "Terrace",
+        line: "Large terrace and sunsets over the lake",
         summary:
           "A custom holiday house with a large terrace and its own roof deck. Lake views, a modern kitchen with a bar, and a distinctive bathroom.",
         points: [
@@ -226,6 +243,7 @@ export const copy = {
       romantico: {
         name: "Romantico",
         tag: "Small and quiet",
+        line: "Small house, extra room, quiet terrace",
         summary:
           "Our small cottage with a covered outdoor terrace, bedroom, eat-in kitchen, bathroom, and an extra room for an office or a second bed.",
         points: [

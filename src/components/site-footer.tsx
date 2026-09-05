@@ -8,18 +8,18 @@ export function SiteFooter() {
   const { t } = useLanguage();
 
   return (
-    <footer className="mt-auto bg-forest text-sand">
+    <footer className="mt-auto bg-dusk text-sand">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <p className="font-heading text-2xl text-white">{SITE.name}</p>
-          <p className="mt-2 font-label text-[10px] text-teal-soft">{SITE.motto}</p>
+          <p className="mt-2 font-label text-[10px] text-gold">{SITE.motto}</p>
           <p className="mt-4 max-w-xs text-sm text-sand/80">{t.footer.note}</p>
         </div>
         <div className="text-sm">
-          <p className="font-label text-[10px] text-teal-soft">{t.contact.imprint}</p>
+          <p className="font-label text-[10px] text-gold">{t.contact.imprint}</p>
           <p className="mt-3">{SITE.address}</p>
           <p className="mt-1">{SITE.roadNote}</p>
-          <a className="mt-3 block text-teal-soft hover:underline" href={`mailto:${SITE.email}`}>
+          <a className="mt-3 block text-gold hover:underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
           {SITE.phones.map((phone) => (
@@ -42,7 +42,7 @@ export function SiteFooter() {
             {t.nav.contact}
           </Link>
           <a
-            className="mt-2 text-teal-soft hover:underline"
+            className="mt-2 text-gold hover:underline"
             href={SITE.facebook}
             target="_blank"
             rel="noreferrer"

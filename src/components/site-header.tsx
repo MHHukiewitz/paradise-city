@@ -19,7 +19,7 @@ const links = [
 function Logo() {
   return (
     <Link href="/" className="group flex items-center gap-3">
-      <span className="relative grid size-10 place-items-center rounded-full bg-teal text-primary-foreground shadow-[inset_0_-2px_0_rgb(0_0_0/0.12)]">
+      <span className="relative grid size-10 place-items-center rounded-full bg-sunset text-primary-foreground shadow-[inset_0_-2px_0_rgb(0_0_0/0.12)]">
         <svg viewBox="0 0 32 32" className="size-6" aria-hidden>
           <path
             d="M16 4c.4 4.5-2.2 7.6-6 9 3 .3 5.2 2.4 6 6 .8-3.6 3-5.7 6-6-3.8-1.4-6.4-4.5-6-9Z"
@@ -46,14 +46,14 @@ function LangToggle() {
       <button
         type="button"
         onClick={() => setLocale("de")}
-        className={`px-2.5 py-1 ${locale === "de" ? "bg-teal text-primary-foreground" : "text-muted-foreground"}`}
+        className={`px-2.5 py-1 ${locale === "de" ? "bg-sunset text-primary-foreground" : "text-muted-foreground"}`}
       >
         DE
       </button>
       <button
         type="button"
         onClick={() => setLocale("en")}
-        className={`px-2.5 py-1 ${locale === "en" ? "bg-teal text-primary-foreground" : "text-muted-foreground"}`}
+        className={`px-2.5 py-1 ${locale === "en" ? "bg-sunset text-primary-foreground" : "text-muted-foreground"}`}
       >
         EN
       </button>
@@ -74,7 +74,7 @@ export function SiteHeader() {
             key={link.href}
             href={link.href}
             className={`font-label text-[11px] transition-colors ${
-              active ? "text-teal" : "text-muted-foreground hover:text-foreground"
+              active ? "text-sunset" : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {t.nav[link.key]}

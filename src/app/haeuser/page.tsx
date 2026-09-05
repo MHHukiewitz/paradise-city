@@ -40,7 +40,7 @@ export default function HousesPage() {
                   <ul className="mt-6 space-y-2">
                     {house.points.map((point) => (
                       <li key={point} className="flex items-start gap-2 text-sm">
-                        <Check className="mt-0.5 size-4 text-teal" />
+                        <Check className="mt-0.5 size-4 text-sunset" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -58,9 +58,9 @@ export default function HousesPage() {
         })}
       </div>
 
-      <section className="mt-24 grid gap-8 rounded-3xl bg-forest px-6 py-12 text-sand md:grid-cols-2">
+      <section className="mt-24 grid gap-8 rounded-3xl bg-dusk px-6 py-12 text-sand md:grid-cols-2">
         <div>
-          <p className="font-label text-[11px] text-teal-soft">{t.saloon.kicker}</p>
+          <p className="font-label text-[11px] text-gold">{t.saloon.kicker}</p>
           <h2 className="mt-3 font-heading text-3xl text-white">{t.saloon.title}</h2>
           <p className="mt-4 text-sand/80">{t.saloon.text}</p>
         </div>
