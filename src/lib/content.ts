@@ -1,4 +1,10 @@
-export type Locale = "de" | "en";
+export type Locale = "de" | "en" | "es";
+
+export const LOCALES: Locale[] = ["de", "en", "es"];
+
+export function isLocale(value: string | null): value is Locale {
+  return value === "de" || value === "en" || value === "es";
+}
 
 export const SITE = {
   name: "Paradise City",
@@ -27,7 +33,7 @@ export const copy = {
     hero: {
       kicker: "Paradise City · Altos",
       title: "Drei Häuser. Ein Abendrot.",
-      lead: "Rustico, Sunset und Romantico. Jedes Haus für zwei Personen. Kurz bleiben oder länger wohnen. Deutsch und Englisch vor Ort.",
+      lead: "Rustico, Sunset und Romantico. Jedes Haus für zwei Personen. Kurz bleiben oder länger wohnen. Deutsch, Englisch und Spanisch vor Ort.",
       cta: "Haus anfragen",
       ctaHouses: "Die Häuser ansehen",
     },
@@ -134,6 +140,7 @@ export const copy = {
       activities:
         "Wir helfen bei Bootstouren, Reiten, Spanischunterricht, Ausflügen zu Iguazú und Itaipú. Oder Sie bleiben einfach an der Sonne.",
       mapCta: "Karte öffnen",
+      roadNote: "Erdstrasse, 4,5 km von Altos",
     },
     gallery: {
       kicker: "Bilder",
@@ -151,20 +158,32 @@ export const copy = {
     },
     contact: {
       kicker: "Kontakt",
-      title: "Schreiben Sie uns. Wir antworten auf Deutsch und Englisch.",
+      title: "Schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Spanisch.",
       lead: "Fragen zu Terminen, Langzeitmiete oder Transfer beantworten wir per E-Mail, Telefon oder WhatsApp.",
+      emailLabel: "E-Mail",
+      phoneLabel: "Telefon / WhatsApp",
       form: {
         name: "Name",
         email: "E-Mail",
         house: "Haus",
         houseAny: "Noch offen",
         dates: "Reisezeit",
+        datesHint: "z. B. 12.–26. Juli",
         message: "Nachricht",
         submit: "Anfrage per E-Mail senden",
         empty: "Bitte Name, E-Mail und Nachricht ausfüllen.",
         sent: "Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage.",
+        mailSubject: "Anfrage Paradise City: {house}",
       },
       imprint: "Angaben",
+    },
+    privacy: {
+      kicker: "Datenschutz",
+      title: "Keine Cookies. Kein Banner.",
+      lead: "Diese Website speichert keine Cookies. Es gibt kein Cookie-Banner, weil nichts zu bestätigen ist.",
+      tracking: "Wir nutzen kein Tracking, keine Werbung und keine Analyse-Dienste.",
+      language: "Die Sprachwahl bleibt nur in diesem Browser. Das ist kein Cookie.",
+      form: "Das Kontaktformular öffnet Ihr E-Mail-Programm. Wir erhalten die Nachricht erst, wenn Sie die E-Mail senden.",
     },
     footer: {
       note: "Ferienhäuser über dem See von San Bernardino. Seit 2011.",
@@ -184,7 +203,7 @@ export const copy = {
     hero: {
       kicker: "Paradise City · Altos",
       title: "Three houses. One sunset.",
-      lead: "Rustico, Sunset, and Romantico. Each house is for two guests. Stay a few nights or a few months. We speak German and English.",
+      lead: "Rustico, Sunset, and Romantico. Each house is for two guests. Stay a few nights or a few months. We speak German, English, and Spanish.",
       cta: "Ask about a house",
       ctaHouses: "See the houses",
     },
@@ -291,6 +310,7 @@ export const copy = {
       activities:
         "We can help with boat trips, riding, Spanish lessons, and visits to Iguazú and Itaipú. Or you stay in the sun.",
       mapCta: "Open map",
+      roadNote: "Dirt road, 4.5 km from Altos",
     },
     gallery: {
       kicker: "Photos",
@@ -308,26 +328,208 @@ export const copy = {
     },
     contact: {
       kicker: "Contact",
-      title: "Write to us. We answer in German and English.",
+      title: "Write to us. We answer in German, English, and Spanish.",
       lead: "Ask about dates, long stays, or transfers by email, phone, or WhatsApp.",
+      emailLabel: "Email",
+      phoneLabel: "Phone / WhatsApp",
       form: {
         name: "Name",
         email: "Email",
         house: "House",
         houseAny: "Not sure yet",
         dates: "Travel dates",
+        datesHint: "e.g. 12–26 July",
         message: "Message",
         submit: "Send inquiry by email",
         empty: "Please fill in name, email, and a message.",
         sent: "Your email app will open with the inquiry ready to send.",
+        mailSubject: "Paradise City inquiry: {house}",
       },
       imprint: "Details",
+    },
+    privacy: {
+      kicker: "Privacy",
+      title: "No cookies. No banner.",
+      lead: "This website does not store cookies. There is no cookie banner, because there is nothing to accept.",
+      tracking: "We do not use tracking, ads, or analytics.",
+      language: "The language choice stays only in this browser. That is not a cookie.",
+      form: "The contact form opens your email app. We receive the message only after you send the email.",
     },
     footer: {
       note: "Holiday houses above the lake at San Bernardino. Since 2011.",
       rights: "Paradise City · Altos, Paraguay",
       privacy: "No cookies. No cookie banner.",
       privacyPage: "Privacy",
+    },
+  },
+  es: {
+    nav: {
+      home: "Inicio",
+      houses: "Casas",
+      location: "Ubicación",
+      gallery: "Galería",
+      contact: "Contacto",
+    },
+    hero: {
+      kicker: "Paradise City · Altos",
+      title: "Tres casas. Un atardecer.",
+      lead: "Rustico, Sunset y Romantico. Cada casa es para dos personas. Quedate unos días o unos meses. Hablamos alemán, inglés y español.",
+      cta: "Consultar una casa",
+      ctaHouses: "Ver las casas",
+    },
+    regionTeaser: {
+      kicker: "La zona",
+      title: "Lago, palmeras y el camino a Ybu",
+      lead: "Más sobre la ubicación, cómo llegar y Paraguay está en la página de ubicación.",
+      cta: "Ubicación y cómo llegar",
+    },
+    pillars: [
+      {
+        title: "Asar",
+        text: "Parrilla compartida en el saloon. Luz de atardecer, vista al lago y tiempo sin reloj.",
+      },
+      {
+        title: "Descansar",
+        text: "Pileta, palmeras, terraza en la azotea. Wi-Fi, aire acondicionado y un jardín que baja el ritmo.",
+      },
+      {
+        title: "Bierli",
+        text: "Bar en el saloon, bebidas frías, perros en el patio. Así de simple lo mantenemos.",
+      },
+    ],
+    housesIntro: {
+      kicker: "Tres casas",
+      title: "Cada casa tiene su carácter",
+      lead: "Todas las casas están preparadas para dos personas. Vienen completas para cocinar y sirven también para estadías largas.",
+    },
+    houses: {
+      rustico: {
+        name: "Rustico",
+        tag: "Casa de tierra",
+        line: "Chimenea, cocina con vista al lago, gran terraza en la azotea",
+        summary:
+          "Una casa de tierra única, con clima agradable todo el año. Living rústico con chimenea, cocina con vista al lago, baño de estilo clásico y una terraza enorme en la azotea.",
+        points: [
+          "Casa de tierra con clima natural",
+          "Chimenea en el living",
+          "Cocina con vista al lago",
+          "Gran terraza en la azotea",
+          "Para 2 personas",
+        ],
+      },
+      sunset: {
+        name: "Sunset",
+        tag: "Terraza",
+        line: "Terraza grande y atardeceres sobre el lago",
+        summary:
+          "Casa de vacaciones con una terraza enorme y su propia azotea. Vista al lago, cocina moderna con barra y un baño muy particular.",
+        points: [
+          "Terraza grande más azotea",
+          "Atardeceres sobre el lago",
+          "Cocina moderna con barra",
+          "Aire acondicionado y Wi-Fi",
+          "Para 2 personas",
+        ],
+      },
+      romantico: {
+        name: "Romantico",
+        tag: "Chica y tranquila",
+        line: "Casa chica, habitación extra, terraza quieta",
+        summary:
+          "Nuestra casita con terraza cubierta, dormitorio, cocina-comedor, baño y un cuarto extra para oficina o segunda cama.",
+        points: [
+          "Terraza cubierta",
+          "Cocina-comedor y dormitorio",
+          "Cuarto extra como oficina o cama",
+          "Mejor precio en estadía larga",
+          "Para 2 personas",
+        ],
+      },
+    },
+    saloon: {
+      kicker: "En común",
+      title: "Paradise City Saloon",
+      text: "Parrilla con varios asientos, pileta y bar. Acá se juntan las visitas a comer, tomar y nadar. El saloon es parte del día, no un extra.",
+    },
+    prices: {
+      kicker: "Precios",
+      title: "Precios claros, reserva directa",
+      lead: "Las casas están completas. Conviene un auto de alquiler. Luz y gas se cobran aparte. La seña es un mes de alquiler. También tenemos perros buenos.",
+      included:
+        "Incluye: Wi-Fi, pileta, parrilla, agua, lavadero, jardín, basura y atardeceres.",
+      extra: "Limpieza final 200.000 Gs. Traslado del aeropuerto a convenir 350.000 Gs.",
+      rows: [
+        { label: "Semana, por casa, hasta 2 personas", value: "1.900.000 Gs" },
+        { label: "Desde un mes, por casa", value: "4.800.000 Gs" },
+        { label: "Desde dos meses, por mes", value: "4.200.000 Gs" },
+        { label: "Romantico, desde dos meses, por mes", value: "3.500.000 Gs" },
+      ],
+    },
+    location: {
+      kicker: "Cómo llegar",
+      title: "Ybu, sobre el lago de San Bernardino",
+      lead: "Paradise City está arriba de San Bernardino y Altos, con vista al lago Ypacaraí. El último tramo es camino de tierra, unos 4,5 km desde Altos.",
+      facts: [
+        { label: "Aeropuerto de Asunción", value: "unos 45 minutos" },
+        { label: "Altos y San Bernardino", value: "unos 3 km" },
+        { label: "Caacupé y Shopping del Sol", value: "pocos minutos" },
+        { label: "Dirección", value: "Ybu, 3240 Altos, Paraguay" },
+      ],
+      paraguay:
+        "Paraguay es un país sin costa, entre Brasil, Argentina y Bolivia. El nombre viene del guaraní y significa agua que va al agua. Cambiá euros o dólares a guaraníes cuando llegues a Paraguay.",
+      activities:
+        "Podemos armar paseos en bote, cabalgatas, clases de español y visitas a Iguazú e Itaipú. O te quedás al sol.",
+      mapCta: "Abrir mapa",
+      roadNote: "Camino de tierra, 4,5 km de Altos",
+    },
+    gallery: {
+      kicker: "Fotos",
+      title: "Piedra, paja, lago, atardecer",
+      lead: "Fotos del predio, de las tres casas y del saloon. Hay más fotos recientes en nuestra página de Facebook Paradise City Saloon.",
+      filters: {
+        all: "Todas",
+        grounds: "Predio",
+        rustico: "Rustico",
+        sunset: "Sunset",
+        romantico: "Romantico",
+        saloon: "Saloon",
+      },
+      facebook: "Más fotos en Facebook",
+    },
+    contact: {
+      kicker: "Contacto",
+      title: "Escribinos. Respondemos en alemán, inglés y español.",
+      lead: "Consultas por fechas, estadías largas o traslado por correo, teléfono o WhatsApp.",
+      emailLabel: "Correo",
+      phoneLabel: "Teléfono / WhatsApp",
+      form: {
+        name: "Nombre",
+        email: "Correo",
+        house: "Casa",
+        houseAny: "Todavía no sé",
+        dates: "Fechas",
+        datesHint: "ej. 12–26 de julio",
+        message: "Mensaje",
+        submit: "Enviar consulta por correo",
+        empty: "Completá nombre, correo y un mensaje.",
+        sent: "Se abre tu programa de correo con la consulta lista.",
+        mailSubject: "Consulta Paradise City: {house}",
+      },
+      imprint: "Datos",
+    },
+    privacy: {
+      kicker: "Privacidad",
+      title: "Sin cookies. Sin banner.",
+      lead: "Este sitio no guarda cookies. No hay banner de cookies, porque no hay nada que aceptar.",
+      tracking: "No usamos seguimiento, publicidad ni análisis.",
+      language: "La elección de idioma queda solo en este navegador. Eso no es una cookie.",
+      form: "El formulario abre tu programa de correo. Recibimos el mensaje solo cuando vos lo enviás.",
+    },
+    footer: {
+      note: "Casas de vacaciones sobre el lago de San Bernardino. Desde 2011.",
+      rights: "Paradise City · Altos, Paraguay",
+      privacy: "Sin cookies. Sin banner de cookies.",
+      privacyPage: "Privacidad",
     },
   },
 };

@@ -18,7 +18,7 @@ export function SiteFooter() {
         <div className="text-sm">
           <p className="font-label text-[10px] text-gold">{t.contact.imprint}</p>
           <p className="mt-3">{SITE.address}</p>
-          <p className="mt-1">{SITE.roadNote}</p>
+          <p className="mt-1">{t.location.roadNote}</p>
           <a className="mt-3 block text-gold hover:underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>

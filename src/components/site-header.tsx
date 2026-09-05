@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useLanguage } from "@/components/language-provider";
-import { SITE } from "@/lib/content";
+import { LOCALES, SITE } from "@/lib/content";
 
 const links = [
   { href: "/", key: "home" as const },
@@ -43,20 +43,18 @@ function LangToggle() {
   const { locale, setLocale } = useLanguage();
   return (
     <div className="flex overflow-hidden rounded-full border border-border bg-card text-xs">
-      <button
-        type="button"
-        onClick={() => setLocale("de")}
-        className={`px-2.5 py-1 ${locale === "de" ? "bg-sunset text-primary-foreground" : "text-muted-foreground"}`}
-      >
-        DE
-      </button>
-      <button
-        type="button"
-        onClick={() => setLocale("en")}
-        className={`px-2.5 py-1 ${locale === "en" ? "bg-sunset text-primary-foreground" : "text-muted-foreground"}`}
-      >
-        EN
-      </button>
+      {LOCALES.map((code) => (
+        <button
+          key={code}
+          type="button"
+          onClick={() => setLocale(code)}
+          className={`px-2.5 py-1 uppercase ${
+            locale === code ? "bg-sunset text-primary-foreground" : "text-muted-foreground"
+          }`}
+        >
+          {code}
+        </button>
+      ))}
     </div>
   );
 }

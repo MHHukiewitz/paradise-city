@@ -19,7 +19,7 @@ function houseFromParams(value: string | null) {
 }
 
 export function InquiryForm() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const params = useSearchParams();
   const [status, setStatus] = useState<"idle" | "empty" | "ready">("idle");
   const [name, setName] = useState("");
@@ -38,10 +38,7 @@ export function InquiryForm() {
     const houseLabel = house
       ? t.houses[house as (typeof HOUSES)[number]].name
       : t.contact.form.houseAny;
-    const subject =
-      locale === "de"
-        ? `Anfrage Paradise City: ${houseLabel}`
-        : `Paradise City inquiry: ${houseLabel}`;
+    const subject = t.contact.form.mailSubject.replace("{house}", houseLabel);
     const body = [
       `${t.contact.form.name}: ${name}`,
       `${t.contact.form.email}: ${email}`,
@@ -92,7 +89,12 @@ export function InquiryForm() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="dates">{t.contact.form.dates}</Label>
-          <Input id="dates" value={dates} onChange={(e) => setDates(e.target.value)} placeholder="z. B. 12.–26. Juli" />
+          <Input
+            id="dates"
+            value={dates}
+            onChange={(e) => setDates(e.target.value)}
+            placeholder={t.contact.form.datesHint}
+          />
         </div>
       </div>
       <div className="space-y-2">

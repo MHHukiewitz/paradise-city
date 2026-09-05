@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
-import { copy, type Locale } from "@/lib/content";
+import { copy, isLocale, type Locale } from "@/lib/content";
 
 type LanguageContextValue = {
   locale: Locale;
@@ -22,7 +22,7 @@ function subscribe(onStoreChange: () => void) {
 
 function readLocale(): Locale {
   const stored = window.localStorage.getItem("pc-locale");
-  return stored === "en" ? "en" : "de";
+  return isLocale(stored) ? stored : "de";
 }
 
 function serverLocale(): Locale {
@@ -34,7 +34,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     window.localStorage.setItem("pc-locale", next);
-    document.documentElement.lang = next === "de" ? "de" : "en";
+    document.documentElement.lang = next;
     window.dispatchEvent(new Event("pc-locale"));
   }, []);
 
