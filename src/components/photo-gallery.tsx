@@ -16,12 +16,16 @@ const FILTERS: Array<"all" | PhotoCategory> = [
   "saloon",
 ];
 
+const EMPTY_EXCLUDE: readonly string[] = [];
+
 export function PhotoGallery({
   limit,
   category,
+  exclude = EMPTY_EXCLUDE,
 }: {
   limit?: number;
   category?: PhotoCategory;
+  exclude?: readonly string[];
 }) {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<"all" | PhotoCategory>(category ?? "all");
@@ -29,12 +33,13 @@ export function PhotoGallery({
 
   const items = useMemo(() => {
     const list = photos.filter((photo) => {
+      if (exclude.includes(photo.src)) return false;
       if (category) return photo.category === category;
       if (filter === "all") return true;
       return photo.category === filter;
     });
     return limit ? list.slice(0, limit) : list;
-  }, [category, filter, limit]);
+  }, [category, exclude, filter, limit]);
 
   return (
     <div>

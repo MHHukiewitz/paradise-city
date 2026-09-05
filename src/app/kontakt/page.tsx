@@ -11,7 +11,7 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <SectionHeading kicker={t.contact.kicker} title={t.contact.title} lead={t.contact.lead} />
+      <SectionHeading level={1} kicker={t.contact.kicker} title={t.contact.title} lead={t.contact.lead} />
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <Suspense fallback={<div className="h-96 animate-pulse rounded-2xl bg-card" />}>
           <InquiryForm />
@@ -49,6 +49,34 @@ export default function ContactPage() {
               rel="noreferrer"
             >
               Facebook · Paradise City Saloon
+            </a>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="font-label text-[10px] text-sunset">{t.contact.bookingLabel}</p>
+            <p className="mt-3 text-sm text-muted-foreground">{t.contact.bookingLead}</p>
+            <a
+              className="mt-4 block text-sm text-sunset hover:underline"
+              href={SITE.booking.property}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.contact.bookingProperty}
+            </a>
+            <a
+              className="mt-2 block text-sm text-sunset hover:underline"
+              href={SITE.booking.rustico}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.contact.bookingHouse.replace("{house}", t.houses.rustico.name)}
+            </a>
+            <a
+              className="mt-2 block text-sm text-sunset hover:underline"
+              href={SITE.booking.sunset}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.contact.bookingHouse.replace("{house}", t.houses.sunset.name)}
             </a>
           </div>
         </aside>

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { LocaleLink } from "@/components/locale-link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
@@ -144,7 +144,7 @@ export function FacebookFeed({
 
       {limit ? (
         <div className="mt-8">
-          <Button render={<Link href="/galerie#aktuell" />} variant="outline">
+          <Button render={<LocaleLink href="/galerie#aktuell" />} variant="outline">
             {t.feed.more}
           </Button>
         </div>

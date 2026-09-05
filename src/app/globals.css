@@ -42,15 +42,15 @@
   --color-card: var(--card);
   --color-sunset: #d4652a;
   --color-gold: #f0b27a;
-  --color-magenta: #c44d7a;
+  --color-magenta: #b5442e;
   --color-clay: #c45c38;
   --color-sand: #f3ddc4;
   --color-ink: #2c1c18;
   --color-linen: #f8eee4;
-  --color-dusk: #3a1f38;
+  --color-dusk: #3c1814;
   --color-teal: #d4652a;
   --color-teal-soft: #f0b27a;
-  --color-forest: #3a1f38;
+  --color-forest: #3c1814;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -73,17 +73,17 @@
   --secondary-foreground: #2c1c18;
   --muted: #f4e3d1;
   --muted-foreground: #7a5348;
-  --accent: #c44d7a;
+  --accent: #b5442e;
   --accent-foreground: #fff7f2;
   --destructive: #9f2d1f;
   --border: #e4c8ae;
   --input: #e4c8ae;
   --ring: #d4652a;
   --chart-1: #d4652a;
-  --chart-2: #c44d7a;
+  --chart-2: #b5442e;
   --chart-3: #f0b27a;
   --chart-4: #b8895a;
-  --chart-5: #3a1f38;
+  --chart-5: #3c1814;
   --radius: 0.85rem;
   --sidebar: #fff7ee;
   --sidebar-foreground: #2c1c18;
@@ -106,9 +106,9 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(ellipse at 80% 0%, rgb(196 77 122 / 0.14), transparent 48%),
+      radial-gradient(ellipse at 80% 0%, rgb(181 68 46 / 0.14), transparent 48%),
       radial-gradient(ellipse at 8% 12%, rgb(232 113 42 / 0.16), transparent 42%),
-      radial-gradient(ellipse at 50% 100%, rgb(58 31 56 / 0.08), transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgb(60 24 20 / 0.08), transparent 50%),
       url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   }
   h1,

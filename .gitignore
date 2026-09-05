@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local song files (deployed from this machine, not stored in git)
+/public/paradise-city.mp3
+/public/paradise-city-homage.mid

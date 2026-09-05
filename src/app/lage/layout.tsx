@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import { pageMetadata, pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Lage und Anfahrt",
-  description: "Ybu, Altos, über dem See von San Bernardino in Paraguay.",
-};
+export const metadata: Metadata = pageMetadata(pageSeo.location);
 
 export default function LocationLayout({ children }: LayoutProps<"/lage">) {
   return children;

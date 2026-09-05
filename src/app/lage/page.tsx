@@ -16,7 +16,7 @@ export default function LocationPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <SectionHeading kicker={t.location.kicker} title={t.location.title} lead={t.location.lead} />
+      <SectionHeading level={1} kicker={t.location.kicker} title={t.location.title} lead={t.location.lead} />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <div className="stone-frame overflow-hidden rounded-2xl bg-card">
@@ -46,7 +46,7 @@ export default function LocationPage() {
         <div className="stone-frame relative aspect-[5/4] overflow-hidden rounded-2xl">
           <Image
             src={shots.lakeSunset}
-            alt="Lake Ypacaraí sunset"
+            alt="Ypacaraí-See bei Sonnenuntergang, gesehen von Altos, Paraguay"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"

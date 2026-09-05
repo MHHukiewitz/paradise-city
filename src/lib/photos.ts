@@ -38,7 +38,7 @@ export const photos: Photo[] = [
   },
   { src: photo("i0dc231749265899b", "1757381163"), alt: "Rustico kitchen and wooden table", category: "rustico" },
   { src: photo("ice625ca43cc6b819", "1757381163"), alt: "Rustico interior", category: "rustico" },
-  { src: photo("ie1104edce3d1d544", "1757381163"), alt: "Rustico living space", category: "rustico" },
+  { src: photo("ie1104edce3d1d544", "1757381163"), alt: "Rustico earth house from outside", category: "rustico" },
   { src: photo("i828c935753bf2672", "1757381163"), alt: "Rustico terrace", category: "rustico" },
   { src: photo("i9f9ab25648a03061", "1757381163"), alt: "Rustico room", category: "rustico" },
   { src: photo("iece26d9c15173d7b", "1757381163"), alt: "Rustico details", category: "rustico" },
@@ -51,8 +51,8 @@ export const photos: Photo[] = [
   { src: photo("i820401dca6d99f01", "1757380120"), alt: "Sunset house garden", category: "sunset" },
   { src: photo("iab8a4ef52185bc13", "1687714564"), alt: "Sunset interior", category: "sunset" },
   { src: photo("ibd618c259c708aa6", "1687714625"), alt: "Sunset house room", category: "sunset" },
-  { src: photo("ie58a1859727453a0", "1684962069"), alt: "Sunset terrace seating", category: "sunset" },
-  { src: photo("ieb430b6cdf03eab1", "1684962069"), alt: "Sunset house detail", category: "sunset" },
+  { src: photo("ie58a1859727453a0", "1684962069"), alt: "Romantico cottage from outside", category: "romantico" },
+  { src: photo("ieb430b6cdf03eab1", "1684962069"), alt: "Romantico bedroom", category: "romantico" },
   { src: photo("i3c91628b7e6a0f5a", "1757381419"), alt: "Romantico brick terrace", category: "romantico" },
   { src: photo("i9a455ea1f03a6d70", "1684962069"), alt: "Romantico cottage", category: "romantico" },
   { src: photo("if7e4f64581a985dd", "1684962070"), alt: "Romantico interior", category: "romantico" },
@@ -75,16 +75,19 @@ export const shots = {
     "https://image.jimcdn.com/app/cms/image/transf/none/path/s3dc7aa68b187a79b/backgroundarea/i5ceb0f4ba4bcfb65/version/1451001290/image.jpg",
   saloonPool: photo("i186fb79c3dbbbd45", "1757381647"),
   saloonSign: photo("i35da355fd25a3dd6", "1757380238"),
+  domainKitchen: photo("i9a455ea1f03a6d70", "1684962069"),
+  brandLogo: "/paradise-city-logo.png",
+  brandHero: "/paradise-city-hero.jpg",
 } as const;
 
 export const houseCovers = {
-  rustico: photo("i0dc231749265899b", "1757381163"),
+  rustico: photo("ie1104edce3d1d544", "1757381163"),
   sunset: photo("iaa51a9b26307733e", "1757380120"),
-  romantico: photo("i3c91628b7e6a0f5a", "1757381419"),
+  romantico: photo("ie58a1859727453a0", "1684962069"),
 } as const;
 
 export const houseGalleries = {
-  rustico: photos.filter((p) => p.category === "rustico"),
-  sunset: photos.filter((p) => p.category === "sunset"),
-  romantico: photos.filter((p) => p.category === "romantico"),
+  rustico: photos.filter((p) => p.category === "rustico" && p.src !== houseCovers.rustico),
+  sunset: photos.filter((p) => p.category === "sunset" && p.src !== houseCovers.sunset),
+  romantico: photos.filter((p) => p.category === "romantico" && p.src !== houseCovers.romantico),
 } as const;

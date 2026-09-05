@@ -1,0 +1,35 @@
+name: paradise-city
+
+services:
+  site:
+    build:
+      context: .
+      args:
+        SITE_URL: https://test.paradise-city.me
+    image: paradise-city:local
+    container_name: site-paradise-city
+    restart: unless-stopped
+    environment:
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      SITE_URL: https://test.paradise-city.me
+    networks:
+      - sites
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=sites
+      - traefik.http.services.site-paradise-city.loadbalancer.server.port=3000
+      - traefik.http.routers.site-paradise-city.rule=Host(`paradise-city.me`) || Host(`www.paradise-city.me`)
+      - traefik.http.routers.site-paradise-city.entrypoints=web,websecure
+      - traefik.http.routers.site-paradise-city.tls.certresolver=le
+      - traefik.http.routers.site-paradise-city.middlewares=security-headers@file
+      - traefik.http.routers.site-paradise-city.service=site-paradise-city
+      - traefik.http.routers.site-paradise-city-test.rule=Host(`test.paradise-city.me`)
+      - traefik.http.routers.site-paradise-city-test.entrypoints=web,websecure
+      - traefik.http.routers.site-paradise-city-test.tls.certresolver=le
+      - traefik.http.routers.site-paradise-city-test.middlewares=security-headers@file
+      - traefik.http.routers.site-paradise-city-test.service=site-paradise-city
+
+networks:
+  sites:
+    external: true

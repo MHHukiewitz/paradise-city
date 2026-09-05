@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { SITE } from "@/lib/content";
 import { useLanguage } from "@/components/language-provider";
+import { LocaleLink } from "@/components/locale-link";
 
 export function SiteFooter() {
   const { t } = useLanguage();
@@ -29,18 +29,18 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="flex flex-col gap-2 text-sm">
-          <Link className="hover:text-white" href="/haeuser">
+          <LocaleLink className="hover:text-white" href="/haeuser">
             {t.nav.houses}
-          </Link>
-          <Link className="hover:text-white" href="/lage">
+          </LocaleLink>
+          <LocaleLink className="hover:text-white" href="/lage">
             {t.nav.location}
-          </Link>
-          <Link className="hover:text-white" href="/galerie">
+          </LocaleLink>
+          <LocaleLink className="hover:text-white" href="/galerie">
             {t.nav.gallery}
-          </Link>
-          <Link className="hover:text-white" href="/kontakt">
+          </LocaleLink>
+          <LocaleLink className="hover:text-white" href="/kontakt">
             {t.nav.contact}
-          </Link>
+          </LocaleLink>
           <a
             className="mt-2 text-gold hover:underline"
             href={SITE.facebook}
@@ -49,9 +49,33 @@ export function SiteFooter() {
           >
             Facebook · Paradise City Saloon
           </a>
-          <Link className="mt-2 text-gold hover:underline" href="/datenschutz">
+          <a
+            className="text-gold hover:underline"
+            href={SITE.booking.property}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t.contact.bookingLabel} · {t.contact.bookingProperty}
+          </a>
+          <a
+            className="text-gold hover:underline"
+            href={SITE.booking.rustico}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t.contact.bookingHouse.replace("{house}", t.houses.rustico.name)}
+          </a>
+          <a
+            className="text-gold hover:underline"
+            href={SITE.booking.sunset}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t.contact.bookingHouse.replace("{house}", t.houses.sunset.name)}
+          </a>
+          <LocaleLink className="mt-2 text-gold hover:underline" href="/datenschutz">
             {t.footer.privacyPage}
-          </Link>
+          </LocaleLink>
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-sand/60">

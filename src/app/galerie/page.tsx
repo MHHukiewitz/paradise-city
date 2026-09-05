@@ -13,7 +13,7 @@ export default function GalleryPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <SectionHeading kicker={t.gallery.kicker} title={t.gallery.title} lead={t.gallery.lead} />
+      <SectionHeading level={1} kicker={t.gallery.kicker} title={t.gallery.title} lead={t.gallery.lead} />
       <div className="mt-6">
         <Button
           render={<a href={SITE.facebook} target="_blank" rel="noreferrer" />}

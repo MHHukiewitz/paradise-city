@@ -9,7 +9,7 @@ export function isLocale(value: string | null): value is Locale {
 export const SITE = {
   name: "Paradise City",
   place: "Altos, Paraguay",
-  motto: "Grillen, chillen, Bierli killen",
+  motto: "Grillen, Chillen, Bierli killen",
   email: "paradise.city.py@gmail.com",
   phones: [
     { label: "+595 983 292 948", href: "tel:+595983292948", wa: "https://wa.me/595983292948" },
@@ -17,6 +17,11 @@ export const SITE = {
   ],
   facebook: "https://www.facebook.com/ParadiseCitySaloon",
   facebookParaguay: "https://www.facebook.com/paradisecity.paraguay",
+  booking: {
+    property: "https://www.booking.com/hotel/py/paradise-city-paraguay.html",
+    rustico: "https://www.booking.com/hotel/py/ferienhaus-rustico.html",
+    sunset: "https://www.booking.com/hotel/py/ferienhaus-sunset.html",
+  },
   address: "Ybu, 3240 Altos, Paraguay",
   roadNote: "Camino de tierra, 4,5 km von Altos",
   coords: { lat: -25.263605, lng: -57.279071 },
@@ -30,10 +35,12 @@ export const copy = {
       location: "Lage",
       gallery: "Galerie",
       contact: "Kontakt",
+      mute: "Ton aus",
+      unmute: "Ton ein",
     },
     hero: {
       kicker: "Paradise City · Altos",
-      title: "Drei Häuser. Ein Abendrot.",
+      title: "Drei Häuser. Ein Sonnenuntergang.",
       lead: "Rustico, Sunset und Romantico. Jedes Haus für zwei Personen. Kurz bleiben oder länger wohnen. Deutsch, Englisch und Spanisch vor Ort.",
       cta: "Haus anfragen",
       ctaHouses: "Die Häuser ansehen",
@@ -62,6 +69,7 @@ export const copy = {
       kicker: "Drei Häuser",
       title: "Jedes Haus hat seinen eigenen Charakter",
       lead: "Alle Häuser sind für zwei Personen eingerichtet. Sie sind komplett ausgestattet und für Selbstversorger gedacht. Ideal auch für längere Aufenthalte.",
+      morePhotos: "Mehr Bilder",
     },
     houses: {
       rustico: {
@@ -118,12 +126,13 @@ export const copy = {
       lead: "Die Häuser sind komplett ausgestattet. Ein Mietauto ist empfehlenswert. Strom und Gas rechnen wir separat ab. Kaution ist eine Monatsmiete. Wir haben auch liebe Hunde.",
       included:
         "Im Preis: WLAN, Pool, Grillstelle, Wasser, Waschküche, Gartenarbeit, Müllentsorgung und Sonnenuntergänge.",
-      extra: "Endreinigung 200.000 Gs. Flughafentransfer nach Absprache 350.000 Gs.",
+      extra: "Endreinigung {cleaning}. Flughafentransfer nach Absprache {transfer}.",
+      rateNote: "Dollar und Euro nach Tageskurs. Stand {date}.",
       rows: [
-        { label: "Woche, pro Haus, bis 2 Personen", value: "1.900.000 Gs" },
-        { label: "Ab einem Monat, pro Haus", value: "4.800.000 Gs" },
-        { label: "Ab zwei Monaten, pro Monat", value: "4.200.000 Gs" },
-        { label: "Romantico, ab zwei Monaten, pro Monat", value: "3.500.000 Gs" },
+        { id: "week", label: "Woche, pro Haus, bis 2 Personen" },
+        { id: "month", label: "Ab einem Monat, pro Haus" },
+        { id: "twoMonths", label: "Ab zwei Monaten, pro Monat" },
+        { id: "romantico", label: "Romantico, ab zwei Monaten, pro Monat" },
       ],
     },
     location: {
@@ -145,7 +154,7 @@ export const copy = {
     },
     gallery: {
       kicker: "Bilder",
-      title: "Stein, Thatch, See, Abendrot",
+      title: "Stein, Palmen, See, Sonnenuntergang",
       lead: "Fotos vom Gelände, den drei Häusern und dem Saloon. Mehr aktuelle Bilder finden Sie auf unserer Facebook-Seite Paradise City Saloon.",
       filters: {
         all: "Alle",
@@ -189,13 +198,17 @@ export const copy = {
         mailSubject: "Anfrage Paradise City: {house}",
       },
       imprint: "Angaben",
+      bookingLabel: "Booking.com",
+      bookingLead: "Die Häuser stehen auch auf Booking.com.",
+      bookingProperty: "Paradise City Paraguay",
+      bookingHouse: "{house} auf Booking.com",
     },
     privacy: {
       kicker: "Datenschutz",
       title: "Keine Cookies. Kein Banner.",
       lead: "Diese Website speichert keine Cookies. Es gibt kein Cookie-Banner, weil nichts zu bestätigen ist.",
       tracking: "Wir nutzen kein Tracking, keine Werbung und keine Analyse-Dienste.",
-      language: "Die Sprachwahl bleibt nur in diesem Browser. Das ist kein Cookie.",
+      language: "Die Sprache steht in der Adresse als Parameter lang. Die Wahl bleibt auch in diesem Browser. Das ist kein Cookie.",
       form: "Das Kontaktformular öffnet Ihr E-Mail-Programm. Wir erhalten die Nachricht erst, wenn Sie die E-Mail senden.",
       feed: "Öffentliche Facebook-Fotos holt der Server einmal am Tag und speichert sie hier. Ihr Browser spricht nicht mit Facebook und setzt keine Facebook-Cookies.",
     },
@@ -213,6 +226,8 @@ export const copy = {
       location: "Location",
       gallery: "Gallery",
       contact: "Contact",
+      mute: "Mute",
+      unmute: "Unmute",
     },
     hero: {
       kicker: "Paradise City · Altos",
@@ -245,6 +260,7 @@ export const copy = {
       kicker: "Three houses",
       title: "Each house has its own character",
       lead: "Every house is set up for two guests. They are fully furnished for self-catering and work well for long stays.",
+      morePhotos: "More photos",
     },
     houses: {
       rustico: {
@@ -301,12 +317,13 @@ export const copy = {
       lead: "The houses are fully equipped. A rental car is useful. Power and gas are billed separately. The deposit is one month of rent. We also have friendly dogs.",
       included:
         "Included: Wi-Fi, pool, grill, water, laundry room, garden work, waste collection, and sunsets.",
-      extra: "Final cleaning 200,000 Gs. Airport transfer by arrangement 350,000 Gs.",
+      extra: "Final cleaning {cleaning}. Airport transfer by arrangement {transfer}.",
+      rateNote: "US dollar and euro at today's rate. As of {date}.",
       rows: [
-        { label: "Week, per house, up to 2 guests", value: "1,900,000 Gs" },
-        { label: "From one month, per house", value: "4,800,000 Gs" },
-        { label: "From two months, per month", value: "4,200,000 Gs" },
-        { label: "Romantico, from two months, per month", value: "3,500,000 Gs" },
+        { id: "week", label: "Week, per house, up to 2 guests" },
+        { id: "month", label: "From one month, per house" },
+        { id: "twoMonths", label: "From two months, per month" },
+        { id: "romantico", label: "Romantico, from two months, per month" },
       ],
     },
     location: {
@@ -372,13 +389,17 @@ export const copy = {
         mailSubject: "Paradise City inquiry: {house}",
       },
       imprint: "Details",
+      bookingLabel: "Booking.com",
+      bookingLead: "The houses are also listed on Booking.com.",
+      bookingProperty: "Paradise City Paraguay",
+      bookingHouse: "{house} on Booking.com",
     },
     privacy: {
       kicker: "Privacy",
       title: "No cookies. No banner.",
       lead: "This website does not store cookies. There is no cookie banner, because there is nothing to accept.",
       tracking: "We do not use tracking, ads, or analytics.",
-      language: "The language choice stays only in this browser. That is not a cookie.",
+      language: "The language is in the address as the lang parameter. The choice also stays in this browser. That is not a cookie.",
       form: "The contact form opens your email app. We receive the message only after you send the email.",
       feed: "The server copies public Facebook photos once a day and stores them here. Your browser does not talk to Facebook and does not set Facebook cookies.",
     },
@@ -396,6 +417,8 @@ export const copy = {
       location: "Ubicación",
       gallery: "Galería",
       contact: "Contacto",
+      mute: "Silenciar",
+      unmute: "Activar sonido",
     },
     hero: {
       kicker: "Paradise City · Altos",
@@ -428,6 +451,7 @@ export const copy = {
       kicker: "Tres casas",
       title: "Cada casa tiene su carácter",
       lead: "Todas las casas están preparadas para dos personas. Vienen completas para cocinar y sirven también para estadías largas.",
+      morePhotos: "Más fotos",
     },
     houses: {
       rustico: {
@@ -484,12 +508,13 @@ export const copy = {
       lead: "Las casas están completas. Conviene un auto de alquiler. Luz y gas se cobran aparte. La seña es un mes de alquiler. También tenemos perros buenos.",
       included:
         "Incluye: Wi-Fi, pileta, parrilla, agua, lavadero, jardín, basura y atardeceres.",
-      extra: "Limpieza final 200.000 Gs. Traslado del aeropuerto a convenir 350.000 Gs.",
+      extra: "Limpieza final {cleaning}. Traslado del aeropuerto a convenir {transfer}.",
+      rateNote: "Dólar y euro al tipo de cambio del día. Al {date}.",
       rows: [
-        { label: "Semana, por casa, hasta 2 personas", value: "1.900.000 Gs" },
-        { label: "Desde un mes, por casa", value: "4.800.000 Gs" },
-        { label: "Desde dos meses, por mes", value: "4.200.000 Gs" },
-        { label: "Romantico, desde dos meses, por mes", value: "3.500.000 Gs" },
+        { id: "week", label: "Semana, por casa, hasta 2 personas" },
+        { id: "month", label: "Desde un mes, por casa" },
+        { id: "twoMonths", label: "Desde dos meses, por mes" },
+        { id: "romantico", label: "Romantico, desde dos meses, por mes" },
       ],
     },
     location: {
@@ -555,13 +580,17 @@ export const copy = {
         mailSubject: "Consulta Paradise City: {house}",
       },
       imprint: "Datos",
+      bookingLabel: "Booking.com",
+      bookingLead: "Las casas también están en Booking.com.",
+      bookingProperty: "Paradise City Paraguay",
+      bookingHouse: "{house} en Booking.com",
     },
     privacy: {
       kicker: "Privacidad",
       title: "Sin cookies. Sin banner.",
       lead: "Este sitio no guarda cookies. No hay banner de cookies, porque no hay nada que aceptar.",
       tracking: "No usamos seguimiento, publicidad ni análisis.",
-      language: "La elección de idioma queda solo en este navegador. Eso no es una cookie.",
+      language: "El idioma está en la dirección como parámetro lang. La elección también queda en este navegador. Eso no es una cookie.",
       form: "El formulario abre tu programa de correo. Recibimos el mensaje solo cuando vos lo enviás.",
       feed: "El servidor copia fotos públicas de Facebook una vez al día y las guarda acá. Tu navegador no habla con Facebook y no pone cookies de Facebook.",
     },

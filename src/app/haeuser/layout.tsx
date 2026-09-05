@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import { pageMetadata, pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ferienhäuser",
-  description: "Rustico, Sunset und Romantico in Paradise City, Altos.",
-};
+export const metadata: Metadata = pageMetadata(pageSeo.houses);
 
 export default function HousesLayout({ children }: LayoutProps<"/haeuser">) {
   return children;

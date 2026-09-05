@@ -14,8 +14,9 @@ function authorized(request: Request) {
 }
 
 function runRefresh() {
+  const script = [process.cwd(), "scripts", "refresh-facebook-feed.mjs"].join("/");
   return new Promise<{ code: number; stdout: string }>((resolve) => {
-    const child = spawn("node", ["scripts/refresh-facebook-feed.mjs"], {
+    const child = spawn(process.execPath, [script], {
       cwd: process.cwd(),
       env: process.env,
     });

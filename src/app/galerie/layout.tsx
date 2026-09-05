@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import { pageMetadata, pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Galerie",
-  description: "Fotos von Paradise City, den Häusern und dem Saloon.",
-};
+export const metadata: Metadata = pageMetadata(pageSeo.gallery);
 
 export default function GalleryLayout({ children }: LayoutProps<"/galerie">) {
   return children;

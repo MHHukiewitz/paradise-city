@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import { pageMetadata, pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Datenschutz",
-  description: "Paradise City setzt keine Cookies und zeigt kein Cookie-Banner.",
-};
+export const metadata: Metadata = pageMetadata(pageSeo.privacy);
 
 export default function PrivacyLayout({ children }: LayoutProps<"/datenschutz">) {
   return children;
