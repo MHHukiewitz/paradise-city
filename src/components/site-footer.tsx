@@ -51,27 +51,27 @@ export function SiteFooter() {
           </a>
           <a
             className="text-gold hover:underline"
-            href={SITE.booking.property}
+            href={SITE.airbnb.rustico}
             target="_blank"
             rel="noreferrer"
           >
-            {t.contact.bookingLabel} · {t.contact.bookingProperty}
+            {t.contact.airbnbHouse.replace("{house}", t.houses.rustico.name)}
           </a>
           <a
             className="text-gold hover:underline"
-            href={SITE.booking.rustico}
+            href={SITE.airbnb.sunset}
             target="_blank"
             rel="noreferrer"
           >
-            {t.contact.bookingHouse.replace("{house}", t.houses.rustico.name)}
+            {t.contact.airbnbHouse.replace("{house}", t.houses.sunset.name)}
           </a>
           <a
             className="text-gold hover:underline"
-            href={SITE.booking.sunset}
+            href={SITE.airbnb.romantico}
             target="_blank"
             rel="noreferrer"
           >
-            {t.contact.bookingHouse.replace("{house}", t.houses.sunset.name)}
+            {t.contact.airbnbHouse.replace("{house}", t.houses.romantico.name)}
           </a>
           <LocaleLink className="mt-2 text-gold hover:underline" href="/datenschutz">
             {t.footer.privacyPage}

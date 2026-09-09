@@ -52,31 +52,31 @@ export default function ContactPage() {
             </a>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6">
-            <p className="font-label text-[10px] text-sunset">{t.contact.bookingLabel}</p>
-            <p className="mt-3 text-sm text-muted-foreground">{t.contact.bookingLead}</p>
+            <p className="font-label text-[10px] text-sunset">{t.contact.airbnbLabel}</p>
+            <p className="mt-3 text-sm text-muted-foreground">{t.contact.airbnbLead}</p>
             <a
               className="mt-4 block text-sm text-sunset hover:underline"
-              href={SITE.booking.property}
+              href={SITE.airbnb.rustico}
               target="_blank"
               rel="noreferrer"
             >
-              {t.contact.bookingProperty}
+              {t.contact.airbnbHouse.replace("{house}", t.houses.rustico.name)}
             </a>
             <a
               className="mt-2 block text-sm text-sunset hover:underline"
-              href={SITE.booking.rustico}
+              href={SITE.airbnb.sunset}
               target="_blank"
               rel="noreferrer"
             >
-              {t.contact.bookingHouse.replace("{house}", t.houses.rustico.name)}
+              {t.contact.airbnbHouse.replace("{house}", t.houses.sunset.name)}
             </a>
             <a
               className="mt-2 block text-sm text-sunset hover:underline"
-              href={SITE.booking.sunset}
+              href={SITE.airbnb.romantico}
               target="_blank"
               rel="noreferrer"
             >
-              {t.contact.bookingHouse.replace("{house}", t.houses.sunset.name)}
+              {t.contact.airbnbHouse.replace("{house}", t.houses.romantico.name)}
             </a>
           </div>
         </aside>

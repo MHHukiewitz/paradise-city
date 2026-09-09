@@ -54,7 +54,6 @@ export default function LocationPage() {
         </div>
         <div>
           <p className="leading-relaxed text-muted-foreground">{t.location.paraguay}</p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">{t.location.activities}</p>
         </div>
       </div>
     </div>

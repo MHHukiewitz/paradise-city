@@ -14,12 +14,6 @@ import { houseCovers, shots } from "@/lib/photos";
 
 const IDS = ["rustico", "sunset", "romantico"] as const;
 
-const HOUSE_BOOKING = {
-  rustico: SITE.booking.rustico,
-  sunset: SITE.booking.sunset,
-  romantico: undefined,
-} as const;
-
 export default function HousesPage() {
   const { t } = useLanguage();
 
@@ -72,16 +66,14 @@ export default function HousesPage() {
                     <Button render={<LocaleLink href={`/kontakt?haus=${id}`} />} className="h-11 px-5" size="lg">
                       {t.hero.cta}
                     </Button>
-                    {HOUSE_BOOKING[id] ? (
-                      <Button
-                        variant="outline"
-                        render={<a href={HOUSE_BOOKING[id]} target="_blank" rel="noreferrer" />}
-                        className="h-11 px-5"
-                        size="lg"
-                      >
-                        {t.contact.bookingHouse.replace("{house}", house.name)}
-                      </Button>
-                    ) : null}
+                    <Button
+                      variant="outline"
+                      render={<a href={SITE.airbnb[id]} target="_blank" rel="noreferrer" />}
+                      className="h-11 px-5"
+                      size="lg"
+                    >
+                      {t.contact.airbnbHouse.replace("{house}", house.name)}
+                    </Button>
                   </div>
                 </div>
               </div>

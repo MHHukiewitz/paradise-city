@@ -99,12 +99,13 @@ export function lodgingJsonLd() {
         sameAs: [
           SITE.facebook,
           SITE.facebookParaguay,
-          SITE.booking.property,
-          SITE.booking.rustico,
-          SITE.booking.sunset,
+          SITE.airbnb.rustico,
+          SITE.airbnb.sunset,
+          SITE.airbnb.romantico,
         ],
         amenityFeature: [
           { "@type": "LocationFeatureSpecification", name: "WLAN", value: true },
+          { "@type": "LocationFeatureSpecification", name: "Klimaanlage", value: true },
           { "@type": "LocationFeatureSpecification", name: "Pool", value: true },
           { "@type": "LocationFeatureSpecification", name: "Grillstelle", value: true },
           { "@type": "LocationFeatureSpecification", name: "Waschküche", value: true },
@@ -113,9 +114,18 @@ export function lodgingJsonLd() {
           "@type": "OfferCatalog",
           name: "Ferienhäuser",
           itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Accommodation", name: "Rustico", url: SITE.booking.rustico } },
-            { "@type": "Offer", itemOffered: { "@type": "Accommodation", name: "Sunset", url: SITE.booking.sunset } },
-            { "@type": "Offer", itemOffered: { "@type": "Accommodation", name: "Romantico" } },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Accommodation", name: "Rustico", url: SITE.airbnb.rustico },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Accommodation", name: "Sunset", url: SITE.airbnb.sunset },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Accommodation", name: "Romantico", url: SITE.airbnb.romantico },
+            },
           ],
         },
       },

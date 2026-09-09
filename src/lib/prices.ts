@@ -2,17 +2,17 @@ import type { Locale } from "@/lib/content";
 import type { ExchangeRates } from "@/lib/rates";
 
 export const PRICE_ROWS = {
-  week: 2_299_000,
-  month: 5_799_000,
-  twoMonths: 5_099_000,
-  romantico: 4_199_000,
+  week: 2_190_000,
+  month: 5_490_000,
+  twoMonths: 4_990_000,
+  romantico: 3_990_000,
 } as const;
 
 export type PriceRowId = keyof typeof PRICE_ROWS;
 
 export const PRICE_EXTRAS = {
-  cleaning: 239_000,
-  transfer: 419_000,
+  cleaning: 199_000,
+  transfer: 399_000,
 } as const;
 
 export function isPriceRowId(value: string): value is PriceRowId {
